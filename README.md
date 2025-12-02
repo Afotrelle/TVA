@@ -24,12 +24,12 @@ The repository is modular, with code organized for:
 
 **Train:**
 ```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nnodes=1 --nproc_per_node=4 --rdzv_backend=c10d --rdzv_endpoint=localhost:0 tools/t_attack.py ./configs/thumos_videomae_b_16.py --na train --max_sample 100 --eps 8 --stepsize_adv 4 --flow 1 --bicos 1
+CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nnodes=1 --nproc_per_node=4 --rdzv_backend=c10d --rdzv_endpoint=localhost:0 t_attack.py ./configs/thumos_videomae_b_16.py --na train --max_sample 100 --eps 8 --stepsize_adv 4 --flow 1 --bicos 1
 ```
 
 **Test:**
 ```bash
-torchrun --nnodes=1 --nproc_per_node=1 --rdzv_backend=c10d --rdzv_endpoint=localhost:0 tools/test_npy.py ./configs/thumos_b2b.py --checkpoint "/file/from/opentad/adatad_thumos_actionformer_videomae_b_768x1_160_adapter_epoch_51_c3872325.pth" --na test --file_path "/perturbation/path/adv_l1_8.0_4_bicon1_flow1_174_thumos/" --max_sample 100`
+torchrun --nnodes=1 --nproc_per_node=1 --rdzv_backend=c10d --rdzv_endpoint=localhost:0 test_npy.py ./configs/thumos_b2b.py --checkpoint "/file/from/opentad/adatad_thumos_actionformer_videomae_b_768x1_160_adapter_epoch_51_c3872325.pth" --na test --file_path "/perturbation/path/adv_l1_8.0_4_bicon1_flow1_174_thumos/" --max_sample 100
 ```
 
 ## Key Features
@@ -40,7 +40,7 @@ torchrun --nnodes=1 --nproc_per_node=1 --rdzv_backend=c10d --rdzv_endpoint=local
 
 ## Preparation
 
-Please make sure you have followed the official setup instructions provided in the [Video-chat-2 GitHub respository](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat2), [SEEDBench GitHub respository](https://github.com/AILab-CVC/SEED-Bench), [Video-LLaVA GitHub repository](https://github.com/PKU-YuanGroup/Video-LLaVA), [LLaVA-NeXT GitHub repository](https://github.com/LLaVA-VL/LLaVA-NeXT), [OpenTAD GitHub repository](https://github.com/sming256/OpenTAD), including data preparation, environment setup and downloading necessary models.
+Please make sure you have followed the official setup instructions provided in the [Video-chat-2 GitHub respository](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat2), [SEEDBench GitHub respository](https://github.com/AILab-CVC/SEED-Bench), [Video-LLaVA GitHub repository](https://github.com/PKU-YuanGroup/Video-LLaVA), [LLaVA-NeXT GitHub repository](https://github.com/LLaVA-VL/LLaVA-NeXT), [OpenTAD GitHub repository](https://github.com/sming256/OpenTAD), including data preparation, environment setup and downloading necessary model checkpoints.
 
 ## Acknowledgements
 
