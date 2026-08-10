@@ -1,4 +1,4 @@
-# Transferable-Video-Attack
+# Transferable-Video-Attack (fork)
 # From Pretrain to Pain: Adversarial Vulnerability of Video Foundation Models Without Task Knowledge
 
 This repository contains the official code for our paper **"From Pretrain to Pain: Adversarial Vulnerability of Video Foundation Models Without Task Knowledge"**. We investigate the adversarial vulnerability of large-scale video foundation models (VFMs) under a task-agnostic threat model. Our approach does not rely on downstream task labels or architectures, and directly perturbs the input video to manipulate intermediate representations of pretrained models.
